@@ -14,10 +14,10 @@ if (isset($_POST['save'])) {
     $contact_no = $_POST['contact_no'];
     $email = $_POST['email'];
 
-    $nice= "INSERT INTO `user` (`name`, `age`, `gender`, `email`, `contact_no`) VALUES ( '$name', '$age', '$gender', '$email', '$contact_no');";
+    $group5= "INSERT INTO `user` (`name`, `age`, `gender`, `email`, `contact_no`) VALUES ( '$name', '$age', '$gender', '$email', '$contact_no');";
     
     
-    $query = mysqli_query($conn, $nice) or die("error: $nice");
+    $query = mysqli_query($conn, $group5) or die("error: $group5");
 
     echo "<script>window.location.href='info.php'</script>";
   }
@@ -34,9 +34,9 @@ if (isset($_POST['save'])) {
                       </div>
                       <div class="modal-body">
                          <label for="" class="">Name</label>
-                         <input name="name" type="text" class="form-control" placeholder = "Enter you name"required> <br>
+                         <input name="name" type="text" class="form-control" placeholder = "Enter your name"required> <br>
                          <label for="">Age</label>
-                         <input name="age" type="text" class="form-control" required> <br>
+                         <input name="age" type="text" class="form-control" placeholder = "Enter your age"required> <br>
                          <label class="form-label">Gender</label>
                          <select required="" name="gender" class="form-control custom-select">
                          <option class="text-muted" value="">Select Gender</option>
@@ -45,13 +45,13 @@ if (isset($_POST['save'])) {
                          </select>
                          <br>
                          <label for="">Contact Number</label>
-                         <input name="contact_no"type="text" class="form-control" required> <br>
+                         <input name="contact_no"type="text" class="form-control" placeholder = "Enter your Contact number"required> <br>
                          <label for="">Email</label>
-                         <input name="email"type="text" class="form-control" required> <br>
+                         <input name="email"type="text" class="form-control" placeholder = "Enter your Email"required> <br>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
-                        <button name="save" type="submit" class="btn btn-dark">Save</button>
+                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+                        <button name="save" type="submit" class="btn btn-outline-success">Save</button>
                       </div>
                     </div>
                   </div>

@@ -1,11 +1,10 @@
 
-<?php 
-   require_once('dashboard.php');  
+<?php  
    require_once "connection.php";
     $id = $_GET['id'];
     
     $kk="SELECT * FROM `user` WHERE id=$id";
-    $result = mysqli_query($nice, $kk);
+    $result = mysqli_query($group5, $kk);
     $row = mysqli_fetch_assoc($result);
 
    if(isset($_POST['editData']))
@@ -17,7 +16,7 @@
       $email= $_POST['email'];
 
       $kk = "UPDATE `user` SET `id`='$id', `name`= '$name',`age`= '$age' ,`gender`= '$gender' ,`contact_no`= '$contact_no' ,`email`= '$email' WHERE `id` = '$id';";
-      $result = mysqli_query($nice, $kk);
+      $result = mysqli_query($group5, $kk);
       
       header("Location: info.php");
           
@@ -34,7 +33,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-    <title>sia1</title>
+    <title>Information</title>
 </head>
 <body class="" v-on:click="Reload"> 
      <table>
@@ -89,8 +88,8 @@
                     </div>
 
                 <div class=" mt-3 d-grid gap-3 d-flex justify-content-end "> 
-                    <a href="info.php" class="btn btn-dark">Cancel</a> 
-                    <button type="submit"  name="editData"  class="btn btn-dark">Update</button>
+                    <a href="info.php" class="btn btn-outline-danger">Cancel</a> 
+                    <button type="submit"  name="editData"  class="btn btn-outline-success">Update</button>
                 </div>
         </table>
        </div>
